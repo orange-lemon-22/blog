@@ -203,3 +203,20 @@ img {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* アイコン（記事タイトル上） */
+.post-icon{
+  border-radius:50%;    /* ← 丸くする */
+  object-fit:cover;     /* 画像が長方形でも中央でトリミング */
+  display:block;
+  margin:0 auto .5rem;  /* 中央寄せ＋下に少し余白 */
+  padding:4px; background:var(--accent-100);
+}
+
+/* 一覧カードにも使うなら（任意） */
+.post-card .post-icon{
+  width:40px; height:40px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:.5rem;
+}
