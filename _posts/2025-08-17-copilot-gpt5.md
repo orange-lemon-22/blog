@@ -36,4 +36,4 @@ description: "VS Code 1.103の更新要旨。GPT-5 / GPT-5 mini対応、チャ�
 
 ## Sources
 
-- https://code.visualstudio.com/updates/v1_103
+[VS Code 1.103 の更新情報](https://code.visualstudio.com/updates/v1_103)
