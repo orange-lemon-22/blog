@@ -1,3 +1,5 @@
+![アイコン]({{ '/assets/images/icon.png' | relative_url }})
+
 ---
 layout: post
 title: "Copilotアップデート：GPT-5 / GPT-5 mini対応、モデルピッカー刷新と各機能強化"
