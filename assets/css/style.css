@@ -220,3 +220,22 @@ img {
   object-fit:cover;
   margin-bottom:.5rem;
 }
+
+
+/* 本文色を濃いグレーに統一（見出し・リンクは除外） */
+.post-content { color: #2b2b2b; }
+
+/* 子要素は本文色を継承させる（ブラウザ既定や他ルールの上書き対策） */
+.post-content p,
+.post-content li,
+.post-content blockquote,
+.post-content code,
+.post-content pre,
+.post-content strong,
+.post-content b,
+.post-content em,
+.post-content table,
+.post-content td,
+.post-content th {
+  color: inherit;
+}
