@@ -23,3 +23,6 @@ theme: null
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# TimeZone
+timezone: Asia/Tokyo
