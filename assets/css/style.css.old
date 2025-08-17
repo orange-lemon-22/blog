@@ -3,13 +3,6 @@
  * シンプルかつモダンなデザインを意識しています。
  */
 
-/* === アクセントカラー定義（必要なら値だけ差し替え） === */
-:root{
-  --accent: #e85d9b;      /* メインのピンク */
-  --accent-600:#d4508b;   /* hover/active用に少し濃い */
-  --accent-100:#fde7f1;   /* 薄いピンク（背景/フォーカス補助） */
-}
-
 /* ベース設定 */
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -24,19 +17,12 @@ body {
 }
 
 a {
-  color: var(--accent);
+  color: #007acc;
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  color: var(--accent-600);
+a:hover {
   text-decoration: underline;
-}
-
-:focus-visible{
-  outline: 3px solid var(--accent-100);
-  outline-offset: 2px;
 }
 
 img {
@@ -152,16 +138,14 @@ img {
 .post-card a.read-more {
   align-self: flex-start;
   padding: 0.5rem 1rem;
-  border: 1px solid var(--accent);
-  border-radius: 8px;
-  color: #fff;
-  background-color: var(--accent);
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  border: 1px solid #007acc;
+  border-radius: 4px;
+  color: #007acc;
+  transition: background-color 0.2s ease;
 }
 
 .post-card a.read-more:hover {
-  background-color: var(--accent-600);
-  border-color: var(--accent-600);
+  background-color: #007acc;
   color: #fff;
 }
 
@@ -173,7 +157,6 @@ img {
 .post-title {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--accent);
 }
 
 .post-meta {
@@ -200,6 +183,6 @@ img {
 }
 
 .post-nav a {
-  color: var(--accent);
+  color: #007acc;
   font-weight: 600;
 }
