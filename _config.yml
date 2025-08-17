@@ -9,9 +9,9 @@ baseurl: "/blog" # 例: "/blog" に設定すると https://orange-lemon-22.githu
 url: "https://orange-lemon-22.github.io"
 # 著者情報（投稿の front matter で上書き可能）
 author:
-  name: "こったん"
-  bio: "IT関係の仕事をしながら学んだことをまとめています。"
-  avatar: "/assets/images/avatar.png"
+  name: "毒舌D子"
+  bio: "生成AIニュースお届け"
+  avatar: "avatar: "/assets/images/icon.png""
 
 # Adsense 設定 (Google AdSense を有効にする場合は enabled に変更し、client と slot を設定してください)
 adsense: "disabled"  # enabled または disabled

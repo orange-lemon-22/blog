@@ -2,6 +2,7 @@
 layout: post
 title: "Copilotアップデート：GPT-5 / GPT-5 mini対応、モデルピッカー刷新と各機能強化"
 date: 2025-08-17 16:00:00 +0900
+icon: assets/images/icon.png
 categories: [リリースノート]
 description: "VS Code 1.103の更新要旨。GPT-5 / GPT-5 mini対応、チャット・MCP・ターミナル・生産性機能の強化など。"
 ---
