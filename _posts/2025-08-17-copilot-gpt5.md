@@ -7,8 +7,6 @@ categories: [リリースノート]
 description: "VS Code 1.103の更新要旨。GPT-5 / GPT-5 mini対応、チャット・MCP・ターミナル・生産性機能の強化など。"
 ---
 
-![アイコン]({{ '/assets/images/icon.png' | relative_url }})
-
 ## Summary
 
 - **GPT-5 / GPT-5 mini**  
