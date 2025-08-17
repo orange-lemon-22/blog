@@ -14,7 +14,7 @@
 html {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #2b2b2b;
   background-color: #fdfdfd;
 }
 
@@ -220,6 +220,3 @@ img {
   object-fit:cover;
   margin-bottom:.5rem;
 }
-
-/* 本文の基本色を濃いグレーにする（ピンクはそのまま） */
-html, body, .post-content { color: #2b2b2b; }
