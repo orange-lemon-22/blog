@@ -1,0 +1,188 @@
+/*
+ * ブログサイトのスタイルシート
+ * シンプルかつモダンなデザインを意識しています。
+ */
+
+/* ベース設定 */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fdfdfd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #007acc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* レイアウト用のコンテナ */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ヘッダー */
+.site-header {
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.site-nav a {
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+/* メインコンテンツ */
+.site-content {
+  padding: 2rem 0;
+}
+
+/* フッター */
+.site-footer {
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 投稿カード一覧 */
+.post-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 600px) {
+  .post-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.post-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.post-card .post-card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card .post-card-title {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.post-card .post-card-meta {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.post-card .post-card-excerpt {
+  flex: 1;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.post-card a.read-more {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  border: 1px solid #007acc;
+  border-radius: 4px;
+  color: #007acc;
+  transition: background-color 0.2s ease;
+}
+
+.post-card a.read-more:hover {
+  background-color: #007acc;
+  color: #fff;
+}
+
+/* 投稿ページ */
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.post-image {
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+.post-content {
+  line-height: 1.8;
+}
+
+/* ナビゲーションリンク */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.post-nav a {
+  color: #007acc;
+  font-weight: 600;
+}

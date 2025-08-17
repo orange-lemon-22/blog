@@ -1,0 +1,34 @@
+title: "こったんブログ"
+description: "IT関係の仕事のことや日常を綴るブログ"
+# 言語を日本語に設定
+lang: ja
+# ベースURL（プロジェクトサイトの場合はリポジトリ名をプレフィックスとして設定します）。
+# 今回の公開先は `https://orange-lemon-22.github.io/blog/` なので baseurl を `/blog` に設定します。
+baseurl: "/blog" # 例: "/blog" に設定すると https://orange-lemon-22.github.io/blog になります
+# サイトのルート URL。GitHub Pages のユーザー名に合わせて設定します。ユーザー名が orange-lemon-22 の場合、以下のようになります。
+url: "https://orange-lemon-22.github.io"
+# 著者情報（投稿の front matter で上書き可能）
+author:
+  name: "こったん"
+  bio: "IT関係の仕事をしながら学んだことをまとめています。"
+  avatar: "/assets/images/avatar.png"
+
+# Adsense 設定 (Google AdSense を有効にする場合は enabled に変更し、client と slot を設定してください)
+adsense: "disabled"  # enabled または disabled
+adsense_client: "ca-pub-xxxxxxxxxxxxxxxx"  # ご自身のクライアントIDに置き換えてください
+adsense_slot: "0000000000"  # ご自身の広告枠IDに置き換えてください
+
+# ビルド設定
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+theme: null # 独自テーマを使用するので null にしておきます
+
+# コレクションの設定（追加したい場合）
+# collections:
+#   tutorials:
+#     output: true
+
+# プラグイン設定
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap

@@ -1,0 +1,9 @@
+{% comment %}
+  Google AdSense 読み込みスクリプト。
+  adsense が "enabled" のときのみ読み込まれます。
+  クライアントIDと広告スロットは _config.yml で設定してください。
+{% endcomment %}
+{% if site.adsense and site.adsense == 'enabled' %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_client }}"
+    crossorigin="anonymous"></script>
+{% endif %}
