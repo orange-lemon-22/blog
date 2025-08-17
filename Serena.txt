@@ -1,0 +1,80 @@
+SerenaはJekyll非対応！！
+エラーの最後に出ている行がヒントで、Serena の自動検出は
+python, javascript/typescript, java, csharp, rust, go, ruby, cpp, php
+の**“コード”を探します。Jekyllサイトのリポジトリは実体が Markdown/HTML/CSS/YAML/Liquid で、.rb のソースが無い**ため「No source files found」となりました（JekyllはRuby製ですが、あなたのリポジトリ自体にRubyコードが入っていない）。
+
+PATH：C:\Users\mail\dev\serena　※GitリポジトリClone済
+Serena起動方法：
+　cd C:\Users\mail\dev\Serena
+　uv run serena start-mcp-server
+起動後のURL：http://127.0.0.1:24282/dashboard/index.html
+ - この Serena プロセスは、Model Context Protocol（MCP）サーバーとして機能しており、以下のような役割を担います：
+ - LLM（例：Claude Desktop、VS Code、Cursor など）がコードベースと対話できるようにする。
+ - LSP（Language Server Protocol）と連携し、シンボルレベルでのコード解析・検索・編集ツールを提供する。
+ - これにより、従来のファイル単位の操作より高度なAI支援が可能になります。
+ - MCP クライアントからのリクエストを受け付け、該当ツール群を動作させるブリッジとなります。
+プロジェクトのインデックス化
+　cd C:\Users\mail\dev\Serena　※Serenaフォルダで実行していることに注意！！
+   uvx --from git+https://github.com/oraios/serena serena project generate-yml --directory "C:\Users\mail\dev\GitHubPages\blog-site-updated"
+
+　　※大きな変更あったら再度実行
+　　※Symbols saved to
+         C:\Users\mail\dev\GitHubPages\blog-site-updated\.serena\cache\typescript\document_symbols_cache_v23-06-25.pkl
+ 　　  INDEX = シンボルキャッシュの作成
+プロジェクトの起動と同時にアクティベート化
+　uv run serena start-mcp-server --project C:\Users\mail\dev\GitHubPages\blog-site-updated　※serena起動時にやる。
+uv.exeの場所
+　C:\Users\mail\.local\bin\uv.exe
+serenaが使われているかの確認
+　list_dir
+　　※「Serena MCP Serverの固有機能」
+　　※list_dir というツールコマンドは、Serena MCP Serverが提供しているMCPツールセットの一部です。
+　　※これが返ってくる＝今起動しているMCPエージェント（今回のmcp.jsonのserena定義）がそのコマンドを処理して応答したということ。
+
+mcp.jsonの書き方が上のアクティベートのコマンドと違う理由。多分、serenaフォルダじゃなくてPJフォルダでコマンド実行してるから。
+
+A. mcp.jsonのserena設定に"cwd"オプションを追加する　でもうまくいく？？？
+
+"serena": {
+  "type": "stdio",
+  "command": "C:\\Users\\mail\\.local\\bin\\uv.exe",
+  "args": [
+    "run",
+    "serena",
+    "start-mcp-server",
+    "--project",
+    "C:\\dev\\tsumugi-1",
+    "--context",
+    "ide-assistant"
+  ],
+  "cwd": "C:\\Users\\mail\\dev\\serena"
+}
+
+
+
+経験豊富な開発者と同じようにコードを発見して編集します IDE の機能を利用すると、 セレナは、非常に大規模で、 複雑なプロジェクト!そのため、無料でオープンソースであるだけでなく、多くの場合、より良い結果が得られます 割増料金を請求する既存のソリューションよりも。
+
+Python
+TypeScript/Javascript (currently has some instability issues, we are working on it)
+
+Serenaをベースにしたエージェントは、コーディングタスクを最初から最後まで自律的に実行できます。 最初の分析から実装、テスト、そして最後にバージョンまで 制御システムのコミット。
+Serenaは、コードの読み取り、書き込み、実行、ログと端末出力の読み取りを行うことができます。 必ずしも推奨しているわけではありませんが、「バイブコーディング」は確かに可能です。 ほとんど「コードがもう存在しない」と感じたい、 Serena は、IDE 内のエージェントよりもバイビングにさらに適していると感じるかもしれません (本当に忘れてしまう別のGUIがあるため)。
+
+複数の料金を支払わなければならないことにうんざりしました IDE ベースのサブスクリプション (Windsurf や Cursor など) により、すでに持っていたチャット サブスクリプション コストに加えてトークンを購入し続ける必要がありました。 Claude Code、Cline、Aider、その他のAPIベースのツールなどのツールで発生する多額のAPIコストも同様に魅力的ではありません。 したがって、他のほとんどのサブスクリプションをキャンセルできるという見込みで Serena を構築しました。
+
+初回だけPJ全体を読み取って独自Folderに入れてINDEXを作る。
+複雑なPJでは「プランニングモード」を使うといい。
+
+
+1. uvx --from git+https://github.com/oraios/serena serena start-mcp-server --mode planning
+uvx は uv tool run の簡易呼び出しエイリアスです。
+
+--from git+... は Serena の公式 GitHub リポジトリから最新コードを取得する指示です。
+
+serena start-mcp-server は Serena MCP サーバーをそのままローカルで起動するためのコマンド。
+
+--mode planning は 「プランニングモード」で起動するオプションです。
+
+👍 → 一切インストールされていない状態でも、uvx が自動で環境を準備し、ローカルで Serena が動くようになります（restartごとに再取得されることもあります）。
+
+この方法は、「ローカル環境で即座にSerena MCP Serverを使いたい」という場合に非常に便利です。
