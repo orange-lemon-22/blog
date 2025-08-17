@@ -220,3 +220,6 @@ img {
   object-fit:cover;
   margin-bottom:.5rem;
 }
+
+/* 本文の基本色を濃いグレーにする（ピンクはそのまま） */
+html, body, .post-content { color: #2b2b2b; }
