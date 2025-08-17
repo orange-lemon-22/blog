@@ -3,18 +3,29 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
+    {% assign _icon = page.icon | default: site.avatar | default: '/assets/images/icon.png' %}
+    {% assign _size = page.icon_size | default: 56 %}
+    <img class="post-icon"
+         src="{{ _icon | relative_url }}"
+         alt="{{ page.title }} のアイコン"
+         width="{{ _size }}" height="{{ _size }}"
+         loading="lazy" decoding="async">
+
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
       {{ page.date | date: '%Y年%-m月%-d日' }}
       {% if page.author or site.author.name %} · {{ page.author | default: site.author.name }}{% endif %}
     </p>
+
     {% if page.image %}
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="post-image" />
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="post-image" />
     {% endif %}
   </header>
+
   <div class="post-content">
     {{ content }}
   </div>
+
   <nav class="post-nav">
     {% if page.previous %}
       <a class="prev-post" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
